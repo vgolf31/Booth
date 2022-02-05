@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>584764939335-mej79e655rvk837pusv04lbag49ssheg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.584764939335-mej79e655rvk837pusv04lbag49ssheg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC2CkfdH3-jkiF0COPD2jbGqI_ronDTEHc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>584764939335</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.VeerteghMinhas.Booth</string>
+	<key>PROJECT_ID</key>
+	<string>booth-da740</string>
+	<key>STORAGE_BUCKET</key>
+	<string>booth-da740.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:584764939335:ios:10aac270940a6ebd6ce562</string>
+	<key>DATABASE_URL</key>
+	<string>https://booth-da740.firebaseio.com</string>
+</dict>
+</plist>

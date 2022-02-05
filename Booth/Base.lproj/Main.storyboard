@@ -1,24 +1,266 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQ1-Eb-2I7">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--earnings_yield_screen-->
+        <scene sceneID="kGc-iU-oFx">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="earnings_yield_screen" title="earnings_yield_screen" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DQ1-Eb-2I7" customClass="EarningsYieldViewController" customModule="Booth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bw2-mD-Xf4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kva-hD-WBY">
+                                <rect key="frame" x="0.0" y="40" width="320" height="390"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </tableView>
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3H-cc-NKC">
+                                <rect key="frame" x="30" y="140" width="260" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="H32-eM-1g2">
+                                        <rect key="frame" x="10" y="21" width="240" height="158"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gg-7e-P7W">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="240" id="Agr-KE-6Zb"/>
+                                                    <constraint firstAttribute="height" constant="128" id="ojb-2S-zDc"/>
+                                                </constraints>
+                                                <mutableString key="text">The magic formula was developed by hedge fund manager Joel Greenblatt and deemed effective by economists. If done correctly, it will net you 30% returns each year.  How this works: 1. Buy two to three positions each month in the top 20 to 30 companies in each ranking, earnings yield and return on capital, over the course of a year.  2. Each year, rebalance the portfolio by selling off losers one week before the year term ends. Sell off winners one week after the year mark.  3. Repeat the process each year for a minimum of five to 10 years or more.  The values may be slightly different due to modified formulas. For example, using EBIT instead of net income in the equations. The rankings should be fairly similar, if not better.  If this is successful for you, please leave a rating on the app store! Anything is appreciated.</mutableString>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eQ-9k-waY">
+                                                <rect key="frame" x="0.0" y="128" width="240" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Wl1-TP-E1B"/>
+                                                    <constraint firstAttribute="width" constant="240" id="ovN-jb-TLb"/>
+                                                </constraints>
+                                                <state key="normal" title="Got it!">
+                                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="hide_explanation_button_clicked:" destination="DQ1-Eb-2I7" eventType="touchUpInside" id="JKb-gL-9sR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstItem="H32-eM-1g2" firstAttribute="centerX" secondItem="F3H-cc-NKC" secondAttribute="centerX" id="9dQ-et-RhL"/>
+                                    <constraint firstAttribute="width" constant="260" id="AI9-4y-5RR"/>
+                                    <constraint firstItem="H32-eM-1g2" firstAttribute="centerY" secondItem="F3H-cc-NKC" secondAttribute="centerY" id="P8L-hJ-LCs"/>
+                                    <constraint firstAttribute="height" constant="200" id="oia-Hl-5DP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="55r-6G-A5l" userLabel="explanation_button">
+                                <rect key="frame" x="290" y="10" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="oEs-Jf-hc5"/>
+                                    <constraint firstAttribute="width" constant="20" id="qp3-Z1-YOB"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="questionmark.square" catalog="system"/>
+                                <connections>
+                                    <action selector="explanation_button_clicked:" destination="DQ1-Eb-2I7" eventType="touchUpInside" id="44q-ie-dcv"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xU-A4-ciR" userLabel="button_stack">
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIG-ac-31y" userLabel="earnings_yield_button">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Uln-mI-0TT"/>
+                                        </constraints>
+                                        <state key="normal" title="Earnings Yield">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eoq-vi-bZk" userLabel="return_on_capital_button">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <state key="normal" title="Return on Capital">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="W3W-SK-xZI" kind="showDetail" animates="NO" id="toh-3E-3T5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fIG-ac-31y" firstAttribute="width" secondItem="Eoq-vi-bZk" secondAttribute="width" id="WHj-zT-aTG"/>
+                                    <constraint firstItem="fIG-ac-31y" firstAttribute="height" secondItem="Eoq-vi-bZk" secondAttribute="height" id="vlr-bS-uwL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="kva-hD-WBY" firstAttribute="trailing" secondItem="WhX-MU-BWs" secondAttribute="trailing" id="350-dI-LSZ"/>
+                            <constraint firstItem="8xU-A4-ciR" firstAttribute="trailing" secondItem="WhX-MU-BWs" secondAttribute="trailing" id="5wr-Le-UoS"/>
+                            <constraint firstItem="kva-hD-WBY" firstAttribute="top" secondItem="55r-6G-A5l" secondAttribute="bottom" constant="10" id="6FE-tc-oIv"/>
+                            <constraint firstItem="kva-hD-WBY" firstAttribute="leading" secondItem="WhX-MU-BWs" secondAttribute="leading" id="Ozv-TX-Lda"/>
+                            <constraint firstItem="8xU-A4-ciR" firstAttribute="top" secondItem="kva-hD-WBY" secondAttribute="bottom" id="aHZ-RX-IOO"/>
+                            <constraint firstItem="F3H-cc-NKC" firstAttribute="centerX" secondItem="bw2-mD-Xf4" secondAttribute="centerX" id="hvw-xJ-S1V"/>
+                            <constraint firstItem="8xU-A4-ciR" firstAttribute="leading" secondItem="WhX-MU-BWs" secondAttribute="leading" id="i0z-X6-IOP"/>
+                            <constraint firstItem="8xU-A4-ciR" firstAttribute="bottom" secondItem="WhX-MU-BWs" secondAttribute="bottom" id="i6O-xR-v57"/>
+                            <constraint firstItem="55r-6G-A5l" firstAttribute="top" secondItem="WhX-MU-BWs" secondAttribute="top" constant="10" id="lBO-8T-UAV"/>
+                            <constraint firstItem="F3H-cc-NKC" firstAttribute="centerY" secondItem="bw2-mD-Xf4" secondAttribute="centerY" id="tAl-QV-Bh8"/>
+                            <constraint firstItem="WhX-MU-BWs" firstAttribute="trailing" secondItem="55r-6G-A5l" secondAttribute="trailing" constant="10" id="x2c-vt-6gi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WhX-MU-BWs"/>
                     </view>
+                    <navigationItem key="navigationItem" id="W9f-Td-sSg"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="explanation_button" destination="55r-6G-A5l" id="rPM-ca-nJx"/>
+                        <outlet property="explanation_view" destination="F3H-cc-NKC" id="8Wu-bg-hAX"/>
+                        <outlet property="hide_explanation_button" destination="9eQ-9k-waY" id="GUf-MO-h0c"/>
+                        <outlet property="tableView" destination="kva-hD-WBY" id="fry-5h-BD7"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fes-fZ-96d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2336.25" y="-506.25"/>
+        </scene>
+        <!--return_on_capital_screen-->
+        <scene sceneID="xdu-C1-gZn">
+            <objects>
+                <viewController storyboardIdentifier="return_on_capital_screen" title="return_on_capital_screen" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W3W-SK-xZI" customClass="ReturnOnCapitalViewController" customModule="Booth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yf2-VC-nNd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AAC-Yf-h8U">
+                                <rect key="frame" x="0.0" y="40" width="320" height="390"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </tableView>
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmF-x5-80T">
+                                <rect key="frame" x="30" y="140" width="260" height="200"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="w55-ed-kLC">
+                                        <rect key="frame" x="10" y="21" width="240" height="158"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lic-W6-AmW">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="4il-XY-iHg"/>
+                                                    <constraint firstAttribute="width" constant="240" id="io4-QK-ljv"/>
+                                                </constraints>
+                                                <mutableString key="text">The magic formula was developed by hedge fund manager Joel Greenblatt and deemed effective by economists. If done correctly, it will net you 30% returns each year.  How this works: 1. Buy two to three positions each month in the top 20 to 30 companies in each ranking, earnings yield and return on capital, over the course of a year.  2. Each year, rebalance the portfolio by selling off losers one week before the year term ends. Sell off winners one week after the year mark.  3. Repeat the process each year for a minimum of five to 10 years or more.  The values may be slightly different due to modified formulas. For example, using EBIT instead of net income in the equations. The rankings should be fairly similar, if not better.  If this is successful for you, please leave a rating on the app store! Anything is appreciated.</mutableString>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WF1-B9-Rly">
+                                                <rect key="frame" x="0.0" y="128" width="240" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="G86-4F-NsL"/>
+                                                    <constraint firstAttribute="width" constant="240" id="OzR-hk-ru8"/>
+                                                </constraints>
+                                                <state key="normal" title="Got it!">
+                                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="hide_explanation_button_clicked:" destination="W3W-SK-xZI" eventType="touchUpInside" id="q6a-AL-X7X"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="3mC-r5-vFq"/>
+                                    <constraint firstItem="w55-ed-kLC" firstAttribute="centerX" secondItem="OmF-x5-80T" secondAttribute="centerX" id="NZh-Ob-vFn"/>
+                                    <constraint firstAttribute="width" constant="260" id="fGF-mI-ex4"/>
+                                    <constraint firstItem="w55-ed-kLC" firstAttribute="centerY" secondItem="OmF-x5-80T" secondAttribute="centerY" id="wQC-tl-4M5"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYW-Q1-x4Q" userLabel="explanation_button">
+                                <rect key="frame" x="290" y="10" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3FA-xU-NEC"/>
+                                    <constraint firstAttribute="width" constant="20" id="PYv-kt-SeW"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="questionmark.square" catalog="system"/>
+                                <connections>
+                                    <action selector="explanation_button_clicked:" destination="W3W-SK-xZI" eventType="touchUpInside" id="6ko-65-1PX"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3gK-m7-y6a" userLabel="button_stack">
+                                <rect key="frame" x="0.0" y="430" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O97-zn-AvO" userLabel="earnings_yield_button">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Xpg-aR-LkL"/>
+                                        </constraints>
+                                        <state key="normal" title="Earnings Yield">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="DQ1-Eb-2I7" kind="showDetail" animates="NO" id="Bgl-uW-niC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYZ-HO-TMr" userLabel="return_on_capital_button">
+                                        <rect key="frame" x="160" y="0.0" width="160" height="50"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" title="Return on Capital">
+                                            <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="O97-zn-AvO" firstAttribute="width" secondItem="IYZ-HO-TMr" secondAttribute="width" id="Oo0-4W-FZr"/>
+                                    <constraint firstItem="O97-zn-AvO" firstAttribute="height" secondItem="IYZ-HO-TMr" secondAttribute="height" id="ogG-QX-jAJ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="3gK-m7-y6a" firstAttribute="top" secondItem="AAC-Yf-h8U" secondAttribute="bottom" id="Daz-DF-IaL"/>
+                            <constraint firstItem="3gK-m7-y6a" firstAttribute="bottom" secondItem="JmJ-ky-7iv" secondAttribute="bottom" id="Dv3-jD-Jp1"/>
+                            <constraint firstItem="JmJ-ky-7iv" firstAttribute="trailing" secondItem="bYW-Q1-x4Q" secondAttribute="trailing" constant="10" id="FEb-fc-flE"/>
+                            <constraint firstItem="AAC-Yf-h8U" firstAttribute="trailing" secondItem="JmJ-ky-7iv" secondAttribute="trailing" id="GHg-s4-gac"/>
+                            <constraint firstItem="OmF-x5-80T" firstAttribute="centerY" secondItem="Yf2-VC-nNd" secondAttribute="centerY" id="GpW-As-9gU"/>
+                            <constraint firstItem="AAC-Yf-h8U" firstAttribute="top" secondItem="bYW-Q1-x4Q" secondAttribute="bottom" constant="10" id="X23-MG-hIW"/>
+                            <constraint firstItem="OmF-x5-80T" firstAttribute="centerX" secondItem="Yf2-VC-nNd" secondAttribute="centerX" id="hqf-jT-1ky"/>
+                            <constraint firstItem="bYW-Q1-x4Q" firstAttribute="top" secondItem="JmJ-ky-7iv" secondAttribute="top" constant="10" id="ig2-NT-a7t"/>
+                            <constraint firstItem="3gK-m7-y6a" firstAttribute="leading" secondItem="JmJ-ky-7iv" secondAttribute="leading" id="jwc-jE-WMg"/>
+                            <constraint firstItem="3gK-m7-y6a" firstAttribute="trailing" secondItem="JmJ-ky-7iv" secondAttribute="trailing" id="oZT-Jn-s4V"/>
+                            <constraint firstItem="AAC-Yf-h8U" firstAttribute="leading" secondItem="JmJ-ky-7iv" secondAttribute="leading" id="oxI-kJ-oGQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JmJ-ky-7iv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hTM-qO-mTj"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="explanation_button" destination="bYW-Q1-x4Q" id="EFG-Iz-1WP"/>
+                        <outlet property="explanation_view" destination="OmF-x5-80T" id="mLf-Em-9Bn"/>
+                        <outlet property="hide_explanation_button" destination="WF1-B9-Rly" id="afC-wb-nI8"/>
+                        <outlet property="tableView" destination="AAC-Yf-h8U" id="dfq-JG-Vnl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FSo-km-Y94" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3219" y="-506"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="questionmark.square" catalog="system" width="32" height="32"/>
+    </resources>
 </document>
