@@ -16,12 +16,34 @@ class EarningsYieldViewController: UIViewController {
     @IBOutlet weak var hide_explanation_button: UIButton!
     @IBOutlet weak var tableView: UITableView!
     let defaults = UserDefaults.standard
+    let date = Date() // now
+    let cal = Calendar.current
     override func viewDidLoad() {
         super.viewDidLoad()
+        let day = cal.ordinality(of: .day, in: .year, for: date)
         let nib = UINib(nibName: "TwoLabelCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TwoLabelCell");
         tableView.delegate = self
         tableView.dataSource = self
+        if(day != (defaults.integer(forKey: "cur_day"))){
+            print(String(defaults.integer(forKey: "cur_day")))
+            self.defaults.set(day, forKey: "cur_day")
+            find_values()
+        }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    @IBAction func explanation_button_clicked(_ sender: Any) {
+        explanation_view.isHidden = false;
+        explanation_view.isUserInteractionEnabled = true;
+
+    }
+    @IBAction func hide_explanation_button_clicked(_ sender: Any) {
+        explanation_view.isHidden = true;
+        explanation_view.isUserInteractionEnabled = false;
+    }
+    func find_values(){
         let db = Firestore.firestore();
         db.collection("earnings_yield").getDocuments() {(querySnapshot, err) in
             if let err = err {
@@ -46,24 +68,10 @@ class EarningsYieldViewController: UIViewController {
                     }
                     self.defaults.set(keys, forKey: "earnings_yield_keys")
                     self.defaults.set(values, forKey: "earnings_yield_values")
-                    print("sorted!");
-                   
                 }
             }
         }
         tableView.reloadData()
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
-    }
-    @IBAction func explanation_button_clicked(_ sender: Any) {
-        explanation_view.isHidden = false;
-        explanation_view.isUserInteractionEnabled = true;
-
-    }
-    @IBAction func hide_explanation_button_clicked(_ sender: Any) {
-        explanation_view.isHidden = true;
-        explanation_view.isUserInteractionEnabled = false;
     }
 }
 extension EarningsYieldViewController: UITableViewDelegate {

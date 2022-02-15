@@ -15,39 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="5D8-F9-6Bg">
-                                <rect key="frame" x="82" y="323" width="250" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Hxv-1l-pzb"/>
-                                    <constraint firstAttribute="height" constant="250" id="IeV-Kl-urX"/>
-                                    <constraint firstAttribute="height" constant="500" id="ZCO-s0-Ubd"/>
-                                    <constraint firstAttribute="width" constant="500" id="yta-Nv-4e4"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Hxv-1l-pzb"/>
-                                        <exclude reference="IeV-Kl-urX"/>
-                                        <exclude reference="ZCO-s0-Ubd"/>
-                                        <exclude reference="yta-Nv-4e4"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Hxv-1l-pzb"/>
-                                        <include reference="IeV-Kl-urX"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="ZCO-s0-Ubd"/>
-                                        <include reference="yta-Nv-4e4"/>
-                                    </mask>
-                                </variation>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BOOTH" translatesAutoresizingMaskIntoConstraints="NO" id="5D8-F9-6Bg">
+                                <rect key="frame" x="0.0" y="198" width="414" height="500"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5D8-F9-6Bg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="A89-lD-tae"/>
                             <constraint firstItem="5D8-F9-6Bg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="WCn-6x-9LK"/>
+                            <constraint firstItem="5D8-F9-6Bg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d18-fh-1b7"/>
                             <constraint firstItem="5D8-F9-6Bg" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="m5Q-ia-EcH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -55,10 +31,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.6305418719212"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.33035714285711"/>
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="BOOTH" width="500" height="500"/>
     </resources>
 </document>
