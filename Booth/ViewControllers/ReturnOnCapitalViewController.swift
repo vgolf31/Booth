@@ -24,9 +24,9 @@ class ReturnOnCapitalViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "TwoLabelCell");
         tableView.delegate = self
         tableView.dataSource = self
-        if(day != (defaults.integer(forKey: "cur_day"))){
-            print(String(defaults.integer(forKey: "cur_day")))
-            self.defaults.set(day, forKey: "cur_day")
+        if(day != (defaults.integer(forKey: "cur_day_c"))){
+            print(String(defaults.integer(forKey: "cur_day_c")))
+            self.defaults.set(day, forKey: "cur_day_c")
             find_values()
         }
     }
@@ -44,7 +44,7 @@ class ReturnOnCapitalViewController: UIViewController {
     }
     func find_values(){
         let db = Firestore.firestore();
-        db.collection("earnings_yield").getDocuments() {(querySnapshot, err) in
+        db.collection("return_on_capital").getDocuments() {(querySnapshot, err) in
             if let err = err {
                 print("error getting documents: \(err)");
             } else{
@@ -57,16 +57,16 @@ class ReturnOnCapitalViewController: UIViewController {
                         values.append((prevalue as? NSNumber)?.floatValue ?? 0)
                     }
                     values = values.sorted().reversed()
-                    print("values: ", values)
                     for value in values{
                         for (k, v) in data{
                             if(((v as? NSNumber)?.floatValue ?? 0) == value){
                                 keys.append(k);
+                                break
                             }
                         }
                     }
-                    self.defaults.set(keys, forKey: "earnings_yield_keys")
-                    self.defaults.set(values, forKey: "earnings_yield_values")
+                    self.defaults.set(keys, forKey: "return_on_capital_keys")
+                    self.defaults.set(values, forKey: "return_on_capital_values")
                 }
             }
         }

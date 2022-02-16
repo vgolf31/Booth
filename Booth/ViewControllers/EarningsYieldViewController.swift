@@ -11,7 +11,6 @@ import Firebase
 import SwiftUI
 class EarningsYieldViewController: UIViewController {
     @IBOutlet weak var explanation_button: UIButton!
-    
     @IBOutlet weak var explanation_view: UIView!
     @IBOutlet weak var hide_explanation_button: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -25,9 +24,9 @@ class EarningsYieldViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "TwoLabelCell");
         tableView.delegate = self
         tableView.dataSource = self
-        if(day != (defaults.integer(forKey: "cur_day"))){
-            print(String(defaults.integer(forKey: "cur_day")))
-            self.defaults.set(day, forKey: "cur_day")
+        if(day != (defaults.integer(forKey: "cur_day_e"))){
+            print(String(defaults.integer(forKey: "cur_day_e")))
+            self.defaults.set(day, forKey: "cur_day_e")
             find_values()
         }
     }
@@ -58,11 +57,11 @@ class EarningsYieldViewController: UIViewController {
                         values.append((prevalue as? NSNumber)?.floatValue ?? 0)
                     }
                     values = values.sorted().reversed()
-                    print("values: ", values)
                     for value in values{
                         for (k, v) in data{
                             if(((v as? NSNumber)?.floatValue ?? 0) == value){
                                 keys.append(k);
+                                break
                             }
                         }
                     }
