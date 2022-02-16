@@ -25,10 +25,10 @@ class ReturnOnCapitalViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         if(day != (defaults.integer(forKey: "cur_day_c"))){
-            print(String(defaults.integer(forKey: "cur_day_c")))
             self.defaults.set(day, forKey: "cur_day_c")
             find_values()
         }
+        tableView.reloadData()
     }
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
@@ -84,7 +84,7 @@ extension ReturnOnCapitalViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabelCell", for: indexPath) as! TwoLabelCell
-        let tickers = (defaults.stringArray(forKey: "return_on_capital_keys")) ?? ["Please Wait", "Loading"]
+        let tickers = (defaults.stringArray(forKey: "return_on_capital_keys")) ?? ["Trying switching back", "and forth between lists"]
         let numbers = (defaults.array(forKey: "return_on_capital_values")  as? [Float]) ?? [0.0, 0.0]
         cell.label1.text = tickers[indexPath.row];
         cell.label2.text = String(numbers[indexPath.row]);
