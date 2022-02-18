@@ -15,7 +15,7 @@ class EarningsYieldViewController: UIViewController {
     @IBOutlet weak var hide_explanation_button: UIButton!
     @IBOutlet weak var tableView: UITableView!
     let defaults = UserDefaults.standard
-    let date = Date() // now
+    let date = Date()
     let cal = Calendar.current
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +25,18 @@ class EarningsYieldViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         if(day != (defaults.integer(forKey: "cur_day_e"))){
-            print(String(defaults.integer(forKey: "cur_day_e")))
             self.defaults.set(day, forKey: "cur_day_e")
             find_values()
         }
-        tableView.reloadData()
     }
     override func viewDidAppear(_ animated: Bool) {
-        tableView.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.tableView.reloadData()
+        }
     }
     @IBAction func explanation_button_clicked(_ sender: Any) {
         explanation_view.isHidden = false;
         explanation_view.isUserInteractionEnabled = true;
-
     }
     @IBAction func hide_explanation_button_clicked(_ sender: Any) {
         explanation_view.isHidden = true;
@@ -50,7 +49,7 @@ class EarningsYieldViewController: UIViewController {
                 print("error getting documents: \(err)");
             } else{
                 for document in querySnapshot!.documents{
-                    let data = document.data();
+                    var data = document.data();
                     var keys = [Any]()
                     let prevalues = Array(data.values)
                     var values = [Float]()
@@ -61,7 +60,8 @@ class EarningsYieldViewController: UIViewController {
                     for value in values{
                         for (k, v) in data{
                             if(((v as? NSNumber)?.floatValue ?? 0) == value){
-                                keys.append(k);
+                                keys.append(k)
+                                data.removeValue(forKey: k)
                                 break
                             }
                         }
@@ -71,22 +71,21 @@ class EarningsYieldViewController: UIViewController {
                 }
             }
         }
-        tableView.reloadData()
     }
 }
 extension EarningsYieldViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("you tapped me!")
+        self.tableView.reloadData()
     }
 }
 extension EarningsYieldViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return defaults.stringArray(forKey: "earnings_yield_keys")?.count ?? 2
+        return defaults.stringArray(forKey: "earnings_yield_keys")?.count ?? 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TwoLabelCell", for: indexPath) as! TwoLabelCell
-        let tickers = (defaults.stringArray(forKey: "earnings_yield_keys")) ?? ["Trying switching back", "and forth between lists"]
-        let numbers = (defaults.array(forKey: "earnings_yield_values")  as? [Float]) ?? [0.0, 0.0]
+        let tickers = (defaults.stringArray(forKey: "earnings_yield_keys")) ?? ["Please Wait"]
+        let numbers = (defaults.array(forKey: "earnings_yield_values")  as? [Float]) ?? [0.0]
         cell.label1.text = tickers[indexPath.row];
         cell.label2.text = String(numbers[indexPath.row]);
         return cell
