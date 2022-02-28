@@ -88,7 +88,7 @@ extension ReturnOnCapitalViewController: UITableViewDataSource {
         let tickers = (defaults.stringArray(forKey: "return_on_capital_keys")) ?? ["Please Wait"]
         let numbers = (defaults.array(forKey: "return_on_capital_values")  as? [Float]) ?? [0.0]
         cell.label1.text = tickers[indexPath.row];
-        cell.label2.text = String(numbers[indexPath.row]);
+        cell.label2.text = String(round(numbers[indexPath.row]*1000)/1000.0);
         return cell
     }
 }
