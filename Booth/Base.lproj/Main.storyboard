@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQ1-Eb-2I7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DQ1-Eb-2I7">
     <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -135,6 +135,135 @@
             </objects>
             <point key="canvasLocation" x="2336.25" y="-506.25"/>
         </scene>
+        <!--Earnings Info View Controller-->
+        <scene sceneID="1AS-he-o28">
+            <objects>
+                <viewController storyboardIdentifier="EarningsInfoViewController" id="vz3-Bq-87I" customClass="EarningsInfoViewController" customModule="Booth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdY-ws-DOp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="a6O-wQ-yDq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <subviews>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Stock Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNe-yK-bvd">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0ah-s0-oMh"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Stock Info Loading..." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXv-ri-1re">
+                                        <rect key="frame" x="0.0" y="40" width="320" height="440"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eq2-fH-6Uy">
+                                <rect key="frame" x="10" y="10" width="56" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="bjj-kd-AYz"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <segue destination="DQ1-Eb-2I7" kind="showDetail" animates="NO" id="S09-bl-dKX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ufZ-Rs-Pni"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="a6O-wQ-yDq" firstAttribute="bottom" secondItem="ufZ-Rs-Pni" secondAttribute="bottom" id="1lx-V1-a5S"/>
+                            <constraint firstItem="a6O-wQ-yDq" firstAttribute="trailing" secondItem="ufZ-Rs-Pni" secondAttribute="trailing" id="3qq-OV-M6n"/>
+                            <constraint firstItem="eq2-fH-6Uy" firstAttribute="top" secondItem="ufZ-Rs-Pni" secondAttribute="top" constant="10" id="GI8-lz-jyM"/>
+                            <constraint firstItem="a6O-wQ-yDq" firstAttribute="leading" secondItem="ufZ-Rs-Pni" secondAttribute="leading" id="bL0-7s-ZGn"/>
+                            <constraint firstItem="a6O-wQ-yDq" firstAttribute="top" secondItem="ufZ-Rs-Pni" secondAttribute="top" id="cIU-wd-d6e"/>
+                            <constraint firstItem="eq2-fH-6Uy" firstAttribute="leading" secondItem="ufZ-Rs-Pni" secondAttribute="leading" constant="10" id="g1s-IO-SjN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="earnings_stock_info" destination="VXv-ri-1re" id="h53-Vj-jmF"/>
+                        <outlet property="earnings_stock_label" destination="VNe-yK-bvd" id="R1m-ze-MrU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKu-nf-6yz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2334.375" y="260"/>
+        </scene>
+        <!--Return Info View Controller-->
+        <scene sceneID="WjP-Cb-CTD">
+            <objects>
+                <viewController storyboardIdentifier="ReturnInfoViewController" id="kkW-5x-Bvk" customClass="ReturnInfoViewController" customModule="Booth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2zl-y4-T2p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PPl-oZ-F0G">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <subviews>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Stock Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVE-iI-4qz">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Tz9-aX-05F"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Stock Info Loading..." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeQ-MS-NRc">
+                                        <rect key="frame" x="0.0" y="40" width="320" height="440"/>
+                                        <color key="backgroundColor" systemColor="labelColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9Z-rf-rQp">
+                                <rect key="frame" x="10" y="10" width="56" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Jct-6E-fMg"/>
+                                    <constraint firstAttribute="height" constant="20" id="cfg-HP-U8W"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <segue destination="W3W-SK-xZI" kind="showDetail" animates="NO" id="XFS-Ef-hf1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jv8-0I-0xU"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="A9Z-rf-rQp" firstAttribute="top" secondItem="Jv8-0I-0xU" secondAttribute="top" constant="10" id="DDK-Ph-DCY"/>
+                            <constraint firstItem="PPl-oZ-F0G" firstAttribute="top" secondItem="Jv8-0I-0xU" secondAttribute="top" id="OfZ-ax-Xrb"/>
+                            <constraint firstItem="PPl-oZ-F0G" firstAttribute="leading" secondItem="Jv8-0I-0xU" secondAttribute="leading" id="Olw-uz-eFN"/>
+                            <constraint firstItem="PPl-oZ-F0G" firstAttribute="bottom" secondItem="Jv8-0I-0xU" secondAttribute="bottom" id="atR-gB-9fq"/>
+                            <constraint firstItem="PPl-oZ-F0G" firstAttribute="trailing" secondItem="Jv8-0I-0xU" secondAttribute="trailing" id="ayK-hJ-hx5"/>
+                            <constraint firstItem="A9Z-rf-rQp" firstAttribute="leading" secondItem="Jv8-0I-0xU" secondAttribute="leading" constant="10" id="xHw-QK-f82"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="return_stock_info" destination="qeQ-MS-NRc" id="53b-N1-3Zb"/>
+                        <outlet property="return_stock_label" destination="cVE-iI-4qz" id="DVV-uo-gTL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJC-Kv-I3o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3204" y="260"/>
+        </scene>
         <!--return_on_capital_screen-->
         <scene sceneID="xdu-C1-gZn">
             <objects>
@@ -262,6 +391,10 @@
             <point key="canvasLocation" x="3219" y="-506"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XFS-Ef-hf1"/>
+        <segue reference="S09-bl-dKX"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="questionmark.square" catalog="system" width="128" height="114"/>
         <systemColor name="darkTextColor">
@@ -269,6 +402,9 @@
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

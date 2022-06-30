@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D13ECEA286DF12B00F7E9B8 /* EarningsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D13ECE9286DF12B00F7E9B8 /* EarningsInfoViewController.swift */; };
+		0D13ECEC286E09FD00F7E9B8 /* ReturnInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D13ECEB286E09FD00F7E9B8 /* ReturnInfoViewController.swift */; };
 		0D1D3173243BC30800F6BE30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D3172243BC30800F6BE30 /* AppDelegate.swift */; };
 		0D1D3175243BC30800F6BE30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D3174243BC30800F6BE30 /* SceneDelegate.swift */; };
 		0D1D317A243BC30800F6BE30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1D3178243BC30800F6BE30 /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		01B71DF2332F55B4BB5545F7 /* Pods-Booth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booth.debug.xcconfig"; path = "Target Support Files/Pods-Booth/Pods-Booth.debug.xcconfig"; sourceTree = "<group>"; };
+		0D13ECE9286DF12B00F7E9B8 /* EarningsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningsInfoViewController.swift; sourceTree = "<group>"; };
+		0D13ECEB286E09FD00F7E9B8 /* ReturnInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnInfoViewController.swift; sourceTree = "<group>"; };
 		0D18D1D727C7F0C700CCF5C5 /* Booth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Booth.entitlements; sourceTree = "<group>"; };
 		0D1D316F243BC30800F6BE30 /* Booth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1D3172243BC30800F6BE30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 			children = (
 				0D674817279E17EB00F169A6 /* EarningsYieldViewController.swift */,
 				0D674815279E052300F169A6 /* ReturnOnCapitalViewController.swift */,
+				0D13ECE9286DF12B00F7E9B8 /* EarningsInfoViewController.swift */,
+				0D13ECEB286E09FD00F7E9B8 /* ReturnInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -261,11 +267,13 @@
 			files = (
 				0D674816279E052300F169A6 /* ReturnOnCapitalViewController.swift in Sources */,
 				0D674818279E17EB00F169A6 /* EarningsYieldViewController.swift in Sources */,
+				0D13ECEA286DF12B00F7E9B8 /* EarningsInfoViewController.swift in Sources */,
 				0D1D3173243BC30800F6BE30 /* AppDelegate.swift in Sources */,
 				0D75C4CC2442868C00A03844 /* Constants.swift in Sources */,
 				0D4EC593279F1B2C005DA853 /* stockstruct.swift in Sources */,
 				0D1D3175243BC30800F6BE30 /* SceneDelegate.swift in Sources */,
 				0D6953AC27A748020012AEE9 /* TwoLabelCell.swift in Sources */,
+				0D13ECEC286E09FD00F7E9B8 /* ReturnInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

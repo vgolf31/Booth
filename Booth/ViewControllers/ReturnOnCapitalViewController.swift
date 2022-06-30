@@ -77,6 +77,12 @@ class ReturnOnCapitalViewController: UIViewController {
 extension ReturnOnCapitalViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.reloadData()
+        let c = tableView.cellForRow(at: indexPath) as! TwoLabelCell
+        self.defaults.set(c.label1.text, forKey: "current_ticker")
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReturnInfoViewController") as? ReturnInfoViewController
+        {
+            present(vc, animated: false, completion: nil)
+        }
     }
 }
 extension ReturnOnCapitalViewController: UITableViewDataSource {
