@@ -11,10 +11,21 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+        guard let initialViewController = storyboard.instantiateViewController(withIdentifier: "EarningsYieldViewController") as? EarningsYieldViewController
+        else {
+            
+            fatalError("Unable to instantiate an ViewController from the storyboard")
+            
+        }
+
+        self.window?.rootViewController = initialViewController
+
         FirebaseApp.configure()
         return true
     }
