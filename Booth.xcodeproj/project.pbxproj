@@ -10,7 +10,6 @@
 		0D13ECEA286DF12B00F7E9B8 /* EarningsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D13ECE9286DF12B00F7E9B8 /* EarningsInfoViewController.swift */; };
 		0D13ECEC286E09FD00F7E9B8 /* ReturnInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D13ECEB286E09FD00F7E9B8 /* ReturnInfoViewController.swift */; };
 		0D1D3173243BC30800F6BE30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D3172243BC30800F6BE30 /* AppDelegate.swift */; };
-		0D1D3175243BC30800F6BE30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1D3174243BC30800F6BE30 /* SceneDelegate.swift */; };
 		0D1D317A243BC30800F6BE30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1D3178243BC30800F6BE30 /* Main.storyboard */; };
 		0D1D317C243BC31100F6BE30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D1D317B243BC31100F6BE30 /* Assets.xcassets */; };
 		0D1D317F243BC31100F6BE30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1D317D243BC31100F6BE30 /* LaunchScreen.storyboard */; };
@@ -23,6 +22,7 @@
 		0D75C4CA24427C6500A03844 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D75C4C924427C6400A03844 /* GoogleService-Info.plist */; };
 		0D75C4CC2442868C00A03844 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D75C4CB2442868C00A03844 /* Constants.swift */; };
 		0D8126C7289C37E6008111C0 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8126C6289C37E6008111C0 /* VideoViewController.swift */; };
+		0DAE601628A43E3D001599D4 /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE601528A43E3D001599D4 /* OpeningViewController.swift */; };
 		DDA0F1E7A40857CE224AB292 /* Pods_Booth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5194B0C74865F1DB8B5E4949 /* Pods_Booth.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +33,6 @@
 		0D18D1D727C7F0C700CCF5C5 /* Booth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Booth.entitlements; sourceTree = "<group>"; };
 		0D1D316F243BC30800F6BE30 /* Booth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Booth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1D3172243BC30800F6BE30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D1D3174243BC30800F6BE30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0D1D3179243BC30800F6BE30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D1D317B243BC31100F6BE30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D1D317E243BC31100F6BE30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		0D75C4C924427C6400A03844 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D75C4CB2442868C00A03844 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0D8126C6289C37E6008111C0 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		0DAE601528A43E3D001599D4 /* OpeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
 		0DBB665724FC0DC90050B960 /* RedisBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedisBuffer.swift; sourceTree = "<group>"; };
 		0DBB665824FC0DC90050B960 /* RedisCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedisCommand.swift; sourceTree = "<group>"; };
 		0DBB665924FC0DC90050B960 /* RedisConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedisConnection.swift; sourceTree = "<group>"; };
@@ -102,7 +102,6 @@
 				0D18D1D727C7F0C700CCF5C5 /* Booth.entitlements */,
 				0DBB666524FC0DC90050B960 /* SwiftRedis */,
 				0D1D3172243BC30800F6BE30 /* AppDelegate.swift */,
-				0D1D3174243BC30800F6BE30 /* SceneDelegate.swift */,
 				0D75C4CB2442868C00A03844 /* Constants.swift */,
 				0D7AA5B8243D36DF0059477D /* ViewControllers */,
 				0D1D3178243BC30800F6BE30 /* Main.storyboard */,
@@ -126,6 +125,7 @@
 				0D13ECEB286E09FD00F7E9B8 /* ReturnInfoViewController.swift */,
 				0D484604288705AD00018612 /* QuestionsViewController.swift */,
 				0D8126C6289C37E6008111C0 /* VideoViewController.swift */,
+				0DAE601528A43E3D001599D4 /* OpeningViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -279,9 +279,9 @@
 				0D4EC593279F1B2C005DA853 /* stockstruct.swift in Sources */,
 				0D8126C7289C37E6008111C0 /* VideoViewController.swift in Sources */,
 				0D484605288705AD00018612 /* QuestionsViewController.swift in Sources */,
-				0D1D3175243BC30800F6BE30 /* SceneDelegate.swift in Sources */,
 				0D6953AC27A748020012AEE9 /* TwoLabelCell.swift in Sources */,
 				0D13ECEC286E09FD00F7E9B8 /* ReturnInfoViewController.swift in Sources */,
+				0DAE601628A43E3D001599D4 /* OpeningViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

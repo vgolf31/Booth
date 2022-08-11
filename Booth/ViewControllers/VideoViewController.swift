@@ -11,10 +11,13 @@ import WebKit
 class VideoViewController: UIViewController {
 
     @IBOutlet weak var videoWebView: WKWebView!
-    
     @IBOutlet weak var continue_button: UIButton!
+    
+    let defaults = UserDefaults.standard
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.defaults.set(true, forKey: "didPass")
         getVideo(videoCode: "fzig7KJFuNU")
         // Do any additional setup after loading the view.
     }
