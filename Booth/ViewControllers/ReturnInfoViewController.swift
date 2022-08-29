@@ -14,6 +14,17 @@ class ReturnInfoViewController: UIViewController {
     @IBOutlet weak var return_stock_label: UITextField!
     @IBOutlet weak var return_stock_info: UITextView!
     override func viewDidLoad() {
+        if(defaults.string(forKey: "DisplayMode") == "Light") {
+            return_stock_label.textColor = UIColor.black
+            return_stock_label.backgroundColor = UIColor.white
+            return_stock_info.textColor = UIColor.black
+            return_stock_info.backgroundColor = UIColor.white
+        } else if(defaults.string(forKey: "DisplayMode") == "Dark"){
+            return_stock_label.textColor = UIColor.white
+            return_stock_label.backgroundColor = UIColor.black
+            return_stock_info.textColor = UIColor.white
+            return_stock_info.backgroundColor = UIColor.black
+        }
         let stored_value = defaults.string(forKey: "current_ticker")!
         let db = Firestore.firestore();
         let docRef = db.collection("stock_info").document(stored_value)

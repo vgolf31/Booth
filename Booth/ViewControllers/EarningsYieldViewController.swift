@@ -12,8 +12,10 @@ import SwiftUI
 class EarningsYieldViewController: UIViewController {
     @IBOutlet weak var explanation_button: UIButton!
     @IBOutlet weak var explanation_view: UIView!
+    @IBOutlet weak var explanation_text: UITextView!
     @IBOutlet weak var hide_explanation_button: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var background: UIView!
     let defaults = UserDefaults.standard
     let date = Date()
     let cal = Calendar.current
@@ -27,6 +29,19 @@ class EarningsYieldViewController: UIViewController {
         if(day != (defaults.integer(forKey: "cur_day_e"))){
             self.defaults.set(day, forKey: "cur_day_e")
             find_values()
+        }
+        if(defaults.string(forKey: "DisplayMode") == "Light") {
+            background.backgroundColor = UIColor.white
+            explanation_view.backgroundColor = UIColor.white
+            explanation_text.textColor = UIColor.black
+            explanation_text.backgroundColor = UIColor.white
+            hide_explanation_button.backgroundColor = UIColor.white
+        } else if(defaults.string(forKey: "DisplayMode") == "Dark"){
+            background.backgroundColor = UIColor.black
+            explanation_view.backgroundColor = UIColor.black
+            explanation_text.textColor = UIColor.white
+            explanation_text.backgroundColor = UIColor.black
+            hide_explanation_button.backgroundColor = UIColor.black
         }
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -94,6 +109,17 @@ extension EarningsYieldViewController: UITableViewDataSource {
         let numbers = (defaults.array(forKey: "earnings_yield_values")  as? [Float]) ?? [0.0]
         cell.label1.text = tickers[indexPath.row];
         cell.label2.text = String(round(numbers[indexPath.row]*1000)/1000.0);
+        if(defaults.string(forKey: "DisplayMode") == "Light") {
+            cell.label1.textColor = UIColor.black
+            cell.label2.textColor = UIColor.black
+            cell.cell_background.backgroundColor = UIColor.white
+            cell.cell_separator.backgroundColor = UIColor.black
+        } else if(defaults.string(forKey: "DisplayMode") == "Dark"){
+            cell.label1.textColor = UIColor.white
+            cell.label2.textColor = UIColor.white
+            cell.cell_background.backgroundColor = UIColor.black
+            cell.cell_separator.backgroundColor = UIColor.white
+        }
         return cell
     }
 }

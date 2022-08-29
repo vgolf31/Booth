@@ -11,7 +11,8 @@ import UIKit
 class TwoLabelCell: UITableViewCell {
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
-    
+    @IBOutlet weak var cell_background: UIView!
+    @IBOutlet weak var cell_separator: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

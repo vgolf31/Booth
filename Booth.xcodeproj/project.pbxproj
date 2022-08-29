@@ -21,8 +21,10 @@
 		0D6953AD27A748020012AEE9 /* TwoLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D6953AB27A748020012AEE9 /* TwoLabelCell.xib */; };
 		0D75C4CA24427C6500A03844 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D75C4C924427C6400A03844 /* GoogleService-Info.plist */; };
 		0D75C4CC2442868C00A03844 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D75C4CB2442868C00A03844 /* Constants.swift */; };
-		0D8126C7289C37E6008111C0 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8126C6289C37E6008111C0 /* VideoViewController.swift */; };
 		0DAE601628A43E3D001599D4 /* OpeningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAE601528A43E3D001599D4 /* OpeningViewController.swift */; };
+		0DD2341C28BC28C20044B932 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2341B28BC28C20044B932 /* MenuViewController.swift */; };
+		0DD2341E28BC2DF60044B932 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2341D28BC2DF60044B932 /* SettingsViewController.swift */; };
+		0DD2342028BD793A0044B932 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD2341F28BD793A0044B932 /* PrivacyViewController.swift */; };
 		DDA0F1E7A40857CE224AB292 /* Pods_Booth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5194B0C74865F1DB8B5E4949 /* Pods_Booth.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +47,6 @@
 		0D6953AB27A748020012AEE9 /* TwoLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoLabelCell.xib; sourceTree = "<group>"; };
 		0D75C4C924427C6400A03844 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D75C4CB2442868C00A03844 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		0D8126C6289C37E6008111C0 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		0DAE601528A43E3D001599D4 /* OpeningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningViewController.swift; sourceTree = "<group>"; };
 		0DBB665724FC0DC90050B960 /* RedisBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedisBuffer.swift; sourceTree = "<group>"; };
 		0DBB665824FC0DC90050B960 /* RedisCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedisCommand.swift; sourceTree = "<group>"; };
@@ -54,6 +55,9 @@
 		0DBB665B24FC0DC90050B960 /* RedisResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedisResponse.swift; sourceTree = "<group>"; };
 		0DBB665C24FC0DC90050B960 /* RedisResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedisResponseParser.swift; sourceTree = "<group>"; };
 		0DBB666124FC0DC90050B960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0DD2341B28BC28C20044B932 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0DD2341D28BC2DF60044B932 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0DD2341F28BD793A0044B932 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		0ECDC039971C13B91BEC8815 /* Pods-Booth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Booth.release.xcconfig"; path = "Target Support Files/Pods-Booth/Pods-Booth.release.xcconfig"; sourceTree = "<group>"; };
 		5194B0C74865F1DB8B5E4949 /* Pods_Booth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Booth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,8 +128,10 @@
 				0D13ECE9286DF12B00F7E9B8 /* EarningsInfoViewController.swift */,
 				0D13ECEB286E09FD00F7E9B8 /* ReturnInfoViewController.swift */,
 				0D484604288705AD00018612 /* QuestionsViewController.swift */,
-				0D8126C6289C37E6008111C0 /* VideoViewController.swift */,
 				0DAE601528A43E3D001599D4 /* OpeningViewController.swift */,
+				0DD2341B28BC28C20044B932 /* MenuViewController.swift */,
+				0DD2341D28BC2DF60044B932 /* SettingsViewController.swift */,
+				0DD2341F28BD793A0044B932 /* PrivacyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -273,15 +279,17 @@
 			files = (
 				0D674816279E052300F169A6 /* ReturnOnCapitalViewController.swift in Sources */,
 				0D674818279E17EB00F169A6 /* EarningsYieldViewController.swift in Sources */,
+				0DD2342028BD793A0044B932 /* PrivacyViewController.swift in Sources */,
 				0D13ECEA286DF12B00F7E9B8 /* EarningsInfoViewController.swift in Sources */,
 				0D1D3173243BC30800F6BE30 /* AppDelegate.swift in Sources */,
+				0DD2341C28BC28C20044B932 /* MenuViewController.swift in Sources */,
 				0D75C4CC2442868C00A03844 /* Constants.swift in Sources */,
 				0D4EC593279F1B2C005DA853 /* stockstruct.swift in Sources */,
-				0D8126C7289C37E6008111C0 /* VideoViewController.swift in Sources */,
 				0D484605288705AD00018612 /* QuestionsViewController.swift in Sources */,
 				0D6953AC27A748020012AEE9 /* TwoLabelCell.swift in Sources */,
 				0D13ECEC286E09FD00F7E9B8 /* ReturnInfoViewController.swift in Sources */,
 				0DAE601628A43E3D001599D4 /* OpeningViewController.swift in Sources */,
+				0DD2341E28BC2DF60044B932 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,14 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if(defaults.bool(forKey: "didPass") == true){
-            guard let initialViewController = storyboard.instantiateViewController(withIdentifier: "EarningsYieldViewController") as? EarningsYieldViewController
+            guard let initialViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController
             else {
                 fatalError("Unable to instantiate an ViewController from the storyboard")
             }
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         } else{
-            guard let initialViewController = storyboard.instantiateViewController(withIdentifier: "opening_screen") as? OpeningViewController
+            guard let initialViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController
             else {
                 fatalError("Unable to instantiate an ViewController from the storyboard")
             }

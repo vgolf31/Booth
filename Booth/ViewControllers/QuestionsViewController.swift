@@ -127,7 +127,7 @@ class QuestionsViewController: UIViewController {
     }
     func updateVals() {
         if(current_question == questions.count){
-            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "VideoViewController") as? VideoViewController
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController
             {
                 present(vc, animated: false, completion: nil)
             }

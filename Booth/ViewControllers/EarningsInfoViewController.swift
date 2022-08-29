@@ -14,6 +14,17 @@ class EarningsInfoViewController: UIViewController {
     @IBOutlet weak var earnings_stock_label: UITextField!
     @IBOutlet weak var earnings_stock_info: UITextView!
     override func viewDidLoad() {
+        if(defaults.string(forKey: "DisplayMode") == "Light") {
+            earnings_stock_label.textColor = UIColor.black
+            earnings_stock_label.backgroundColor = UIColor.white
+            earnings_stock_info.textColor = UIColor.black
+            earnings_stock_info.backgroundColor = UIColor.white
+        } else if(defaults.string(forKey: "DisplayMode") == "Dark"){
+            earnings_stock_label.textColor = UIColor.white
+            earnings_stock_label.backgroundColor = UIColor.black
+            earnings_stock_info.textColor = UIColor.white
+            earnings_stock_info.backgroundColor = UIColor.black
+        }
         let stored_value = defaults.string(forKey: "current_ticker")!
         let db = Firestore.firestore();
         let docRef = db.collection("stock_info").document(stored_value)

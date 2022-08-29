@@ -172,53 +172,366 @@
             </objects>
             <point key="canvasLocation" x="870" y="-431"/>
         </scene>
-        <!--video_screen-->
-        <scene sceneID="qpA-XN-yFZ">
+        <!--Menu View Controller-->
+        <scene sceneID="QTX-zf-Kmh">
             <objects>
-                <viewController restorationIdentifier="VideoViewController" storyboardIdentifier="VideoViewController" title="video_screen" modalPresentationStyle="overFullScreen" id="iL0-9W-wW5" customClass="VideoViewController" customModule="Booth" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dgG-Ki-d4G">
+                <viewController restorationIdentifier="MenuViewController" storyboardIdentifier="MenuViewController" modalPresentationStyle="fullScreen" id="f7f-pj-bmg" customClass="MenuViewController" customModule="Booth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2hh-zA-Jvl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CD-d2-hUh">
-                                <rect key="frame" x="119" y="419" width="82.5" height="31"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue"/>
-                                <connections>
-                                    <action selector="continueButtonPressed:" destination="iL0-9W-wW5" eventType="touchUpInside" id="j7P-ht-yyH"/>
-                                </connections>
-                            </button>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fpe-Hf-gUm">
-                                <rect key="frame" x="40" y="180" width="240" height="120"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="BOOTH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsQ-Tr-uO4">
+                                <rect key="frame" x="0.0" y="30" width="320" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="l9v-Sw-3bq">
+                                <rect key="frame" x="0.0" y="156.5" width="320" height="293"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcU-Yl-sNU">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="31"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Stock Listings"/>
+                                        <connections>
+                                            <segue destination="DQ1-Eb-2I7" kind="showDetail" animates="NO" id="UGX-ch-afj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOi-Eg-Tbb">
+                                        <rect key="frame" x="0.0" y="131" width="320" height="31"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Settings"/>
+                                        <connections>
+                                            <segue destination="yZR-ky-JQb" kind="showDetail" animates="NO" id="SWO-Pp-L4i"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKX-XC-jB9">
+                                        <rect key="frame" x="0.0" y="262" width="320" height="31"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Privacy Policy"/>
+                                        <connections>
+                                            <segue destination="HDj-dp-smd" kind="showDetail" animates="NO" id="Hcb-ks-62R"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="IZh-VD-pJQ"/>
-                                    <constraint firstAttribute="width" constant="240" id="zC7-82-Upk"/>
+                                    <constraint firstAttribute="trailing" secondItem="MOi-Eg-Tbb" secondAttribute="trailing" id="9Ag-1w-SVg"/>
+                                    <constraint firstAttribute="trailing" secondItem="GKX-XC-jB9" secondAttribute="trailing" id="9cs-Mf-Ze1"/>
+                                    <constraint firstItem="NcU-Yl-sNU" firstAttribute="height" secondItem="MOi-Eg-Tbb" secondAttribute="height" id="cF7-24-L5v"/>
+                                    <constraint firstItem="GKX-XC-jB9" firstAttribute="leading" secondItem="l9v-Sw-3bq" secondAttribute="leading" id="cj9-Kb-pGZ"/>
+                                    <constraint firstItem="MOi-Eg-Tbb" firstAttribute="height" secondItem="GKX-XC-jB9" secondAttribute="height" id="d2d-Ku-2T1"/>
+                                    <constraint firstAttribute="trailing" secondItem="NcU-Yl-sNU" secondAttribute="trailing" id="fF0-Hw-bJR"/>
+                                    <constraint firstItem="MOi-Eg-Tbb" firstAttribute="leading" secondItem="l9v-Sw-3bq" secondAttribute="leading" id="oB9-WX-VAq"/>
+                                    <constraint firstItem="NcU-Yl-sNU" firstAttribute="leading" secondItem="l9v-Sw-3bq" secondAttribute="leading" id="wef-Nd-ATh"/>
                                 </constraints>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vVr-9m-IHE"/>
+                        <viewLayoutGuide key="safeArea" id="wD5-np-moA"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Fpe-Hf-gUm" firstAttribute="centerY" secondItem="dgG-Ki-d4G" secondAttribute="centerY" id="1VC-fl-uaL"/>
-                            <constraint firstItem="Fpe-Hf-gUm" firstAttribute="centerX" secondItem="dgG-Ki-d4G" secondAttribute="centerX" id="eJZ-a6-IiC"/>
-                            <constraint firstItem="8CD-d2-hUh" firstAttribute="centerX" secondItem="dgG-Ki-d4G" secondAttribute="centerX" id="ivM-yL-34g"/>
-                            <constraint firstItem="vVr-9m-IHE" firstAttribute="bottom" secondItem="8CD-d2-hUh" secondAttribute="bottom" constant="30" id="mxO-Fy-Ham"/>
+                            <constraint firstItem="wD5-np-moA" firstAttribute="trailing" secondItem="l9v-Sw-3bq" secondAttribute="trailing" id="4DF-Ei-CvZ"/>
+                            <constraint firstItem="wD5-np-moA" firstAttribute="bottom" secondItem="l9v-Sw-3bq" secondAttribute="bottom" constant="30" id="J74-HN-RGZ"/>
+                            <constraint firstItem="l9v-Sw-3bq" firstAttribute="top" secondItem="zsQ-Tr-uO4" secondAttribute="bottom" constant="100" id="LnY-sl-XOU"/>
+                            <constraint firstItem="wD5-np-moA" firstAttribute="trailing" secondItem="zsQ-Tr-uO4" secondAttribute="trailing" id="Wwg-IM-COj"/>
+                            <constraint firstItem="zsQ-Tr-uO4" firstAttribute="top" secondItem="wD5-np-moA" secondAttribute="top" constant="30" id="ZyR-fB-PrJ"/>
+                            <constraint firstItem="zsQ-Tr-uO4" firstAttribute="leading" secondItem="wD5-np-moA" secondAttribute="leading" id="hfr-Rr-Zbe"/>
+                            <constraint firstItem="l9v-Sw-3bq" firstAttribute="leading" secondItem="wD5-np-moA" secondAttribute="leading" id="vpm-cj-Jyy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6cD-Dn-qt0"/>
+                    <connections>
+                        <outlet property="background" destination="2hh-zA-Jvl" id="Rbc-aC-CLX"/>
+                        <outlet property="settings_button" destination="MOi-Eg-Tbb" id="oHZ-vi-k9t"/>
+                        <outlet property="stock_listings_button" destination="NcU-Yl-sNU" id="iw0-mj-AEh"/>
+                        <outlet property="title_label" destination="zsQ-Tr-uO4" id="Q4L-o5-Z4r"/>
+                        <outlet property="tos_button" destination="GKX-XC-jB9" id="8MV-43-IGn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zat-HF-yIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="257"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="mWr-KT-Z34">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="yZR-ky-JQb" customClass="SettingsViewController" customModule="Booth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ik7-XC-dxn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F25-8r-ZZh">
+                                <rect key="frame" x="10" y="10" width="22.5" height="19"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrowshape.turn.up.backward.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="f7f-pj-bmg" kind="showDetail" animates="NO" id="jTV-44-wNh"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Tgd-eG-7rX">
+                                <rect key="frame" x="0.0" y="80" width="320" height="360"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9vx-eF-uUj">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="Dark Mode"/>
+                                            <segment title="Light Mode"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="DisplayModeChanged:" destination="yZR-ky-JQb" eventType="valueChanged" id="vuu-Tk-6Og"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BMk-rA-oC3">
+                                        <rect key="frame" x="0.0" y="133.5" width="320" height="94"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="PE 3-month"/>
+                                            <segment title="PE 6-month"/>
+                                            <segment title="PE annual"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="peModeChanged:" destination="yZR-ky-JQb" eventType="valueChanged" id="tGm-Lt-eTH"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vh9-Kn-xYW">
+                                        <rect key="frame" x="0.0" y="266.5" width="320" height="94.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="Absolute Val"/>
+                                            <segment title="Relative Val"/>
+                                            <segment title="DDM"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="valuationModeChanged:" destination="yZR-ky-JQb" eventType="valueChanged" id="eFQ-Da-I1k"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BMk-rA-oC3" firstAttribute="height" secondItem="vh9-Kn-xYW" secondAttribute="height" id="aQa-cf-sXg"/>
+                                    <constraint firstItem="9vx-eF-uUj" firstAttribute="height" secondItem="BMk-rA-oC3" secondAttribute="height" id="ysu-qE-vYv"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwy-BN-eGz">
+                                <rect key="frame" x="128.5" y="20" width="63" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GCW-D1-zFp"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xwy-BN-eGz" firstAttribute="centerX" secondItem="ik7-XC-dxn" secondAttribute="centerX" id="1Ip-r2-Avn"/>
+                            <constraint firstItem="GCW-D1-zFp" firstAttribute="trailing" secondItem="Tgd-eG-7rX" secondAttribute="trailing" id="6y8-Kh-NDL"/>
+                            <constraint firstItem="GCW-D1-zFp" firstAttribute="bottom" secondItem="Tgd-eG-7rX" secondAttribute="bottom" constant="40" id="M9v-D4-NaM"/>
+                            <constraint firstItem="F25-8r-ZZh" firstAttribute="leading" secondItem="GCW-D1-zFp" secondAttribute="leading" constant="10" id="T80-GL-ddB"/>
+                            <constraint firstItem="F25-8r-ZZh" firstAttribute="top" secondItem="GCW-D1-zFp" secondAttribute="top" constant="10" id="eQD-al-3LP"/>
+                            <constraint firstItem="Xwy-BN-eGz" firstAttribute="top" secondItem="GCW-D1-zFp" secondAttribute="top" constant="20" id="fxH-Mg-Juq"/>
+                            <constraint firstItem="Tgd-eG-7rX" firstAttribute="leading" secondItem="GCW-D1-zFp" secondAttribute="leading" id="osM-ji-1Bj"/>
+                            <constraint firstItem="Tgd-eG-7rX" firstAttribute="top" secondItem="GCW-D1-zFp" secondAttribute="top" constant="80" id="wAx-Ep-j1F"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ooI-xt-t3H"/>
+                    <connections>
+                        <outlet property="DisplayMode" destination="9vx-eF-uUj" id="Ga6-vc-jXV"/>
+                        <outlet property="background" destination="ik7-XC-dxn" id="eSm-af-MZa"/>
+                        <outlet property="peMode" destination="BMk-rA-oC3" id="SKZ-0C-YOC"/>
+                        <outlet property="settings_label" destination="Xwy-BN-eGz" id="evd-gW-6Ua"/>
+                        <outlet property="valuationMode" destination="vh9-Kn-xYW" id="She-Dg-YYa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SiD-XY-vma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856.875" y="1172.5"/>
+        </scene>
+        <!--Privacy View Controller-->
+        <scene sceneID="Ldm-lu-MI2">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="HDj-dp-smd" customClass="PrivacyViewController" customModule="Booth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RVX-0Z-Rjh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jJx-fN-sct">
+                                <rect key="frame" x="0.0" y="50" width="320" height="430"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <mutableString key="text">This Privacy Policy describes our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
+
+We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.
+
+Interpretation and Definitions
+ Interpretation
+The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+
+Definitions
+For the purposes of this Privacy Policy:
+
+Account means a unique account created for You to access our Service or parts of our Service.
+
+Affiliate means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+
+Application means the software program provided by the Company downloaded by You on any electronic device, named Booth Trading Tool
+
+Company (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Booth Trading Tool.
+
+Country refers to: New Jersey, United States
+
+Device means any device that can access the Service such as a computer, a cellphone or a digital tablet.
+
+Personal Data is any information that relates to an identified or identifiable individual.
+
+Service refers to the Application.
+
+Service Provider means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.
+
+Usage Data refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).
+
+You means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+
+Collecting and Using Your Personal Data
+Types of Data Collected
+Personal Data
+While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
+
+Usage Data
+Usage Data
+Usage Data is collected automatically when using the Service.
+
+Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
+
+When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.
+
+We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.
+
+Use of Your Personal Data
+The Company may use Personal Data for the following purposes:
+
+To provide and maintain our Service, including to monitor the usage of our Service.
+
+To manage Your Account: to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.
+
+For the performance of a contract: the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.
+
+To contact You: To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.
+
+To provide You with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.
+
+To manage Your requests: To attend and manage Your requests to Us.
+
+For business transfers: We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.
+
+For other purposes: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.
+
+We may share Your personal information in the following situations:
+
+With Service Providers: We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.
+For business transfers: We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.
+With Affiliates: We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.
+With business partners: We may share Your information with Our business partners to offer You certain products, services or promotions.
+With other users: when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.
+With Your consent: We may disclose Your personal information for any other purpose with Your consent.
+Retention of Your Personal Data
+The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.
+
+The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.
+
+Transfer of Your Personal Data
+Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
+
+Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.
+
+The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.
+
+Disclosure of Your Personal Data
+Business Transactions
+If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.
+
+Law enforcement
+Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).
+
+Other legal requirements
+The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:
+
+Comply with a legal obligation
+Protect and defend the rights or property of the Company
+Prevent or investigate possible wrongdoing in connection with the Service
+Protect the personal safety of Users of the Service or the public
+Protect against legal liability
+Security of Your Personal Data
+The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
+
+Children's Privacy
+Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
+
+If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.
+
+Links to Other Websites
+Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
+
+We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+
+Changes to this Privacy Policy
+We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
+
+We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.
+
+You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+
+Contact Us
+If you have any questions about this Privacy Policy, You can contact us:
+
+By email: vgolf31@gmail.com
+
+By phone number: 2014967637</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZJ-qX-RcD">
+                                <rect key="frame" x="107.5" y="20" width="105.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kst-Vz-4cM">
+                                <rect key="frame" x="10" y="10" width="21" height="22"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrowshape.turn.up.backward.fill" catalog="system">
+                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="f7f-pj-bmg" kind="showDetail" animates="NO" id="EGs-Ug-mjE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XO6-3y-pUS"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XO6-3y-pUS" firstAttribute="bottom" secondItem="jJx-fN-sct" secondAttribute="bottom" id="1vc-H8-Mn2"/>
+                            <constraint firstItem="Kst-Vz-4cM" firstAttribute="top" secondItem="XO6-3y-pUS" secondAttribute="top" constant="10" id="84q-Vx-q1z"/>
+                            <constraint firstItem="PZJ-qX-RcD" firstAttribute="top" secondItem="XO6-3y-pUS" secondAttribute="top" constant="20" id="Ivh-nq-tNH"/>
+                            <constraint firstItem="Kst-Vz-4cM" firstAttribute="leading" secondItem="XO6-3y-pUS" secondAttribute="leading" constant="10" id="Kd1-nq-KRW"/>
+                            <constraint firstItem="jJx-fN-sct" firstAttribute="leading" secondItem="XO6-3y-pUS" secondAttribute="leading" id="XPd-XC-r58"/>
+                            <constraint firstItem="XO6-3y-pUS" firstAttribute="trailing" secondItem="jJx-fN-sct" secondAttribute="trailing" id="cat-gA-Q7Y"/>
+                            <constraint firstItem="PZJ-qX-RcD" firstAttribute="centerX" secondItem="RVX-0Z-Rjh" secondAttribute="centerX" id="kIe-gc-teC"/>
+                            <constraint firstItem="jJx-fN-sct" firstAttribute="top" secondItem="XO6-3y-pUS" secondAttribute="top" constant="50" id="qJZ-Ld-U6j"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="continue_button" destination="8CD-d2-hUh" id="0QU-4K-W9i"/>
-                        <outlet property="videoWebView" destination="Fpe-Hf-gUm" id="1Ab-hE-zqk"/>
+                        <outlet property="background" destination="RVX-0Z-Rjh" id="zQy-DU-LrJ"/>
+                        <outlet property="text_view" destination="jJx-fN-sct" id="64O-NG-7Lw"/>
+                        <outlet property="title_label" destination="PZJ-qX-RcD" id="RIQ-3d-2PQ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AKS-xr-Je3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nXv-Zt-JQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="242"/>
+            <point key="canvasLocation" x="2334" y="1120"/>
         </scene>
         <!--earnings_yield_screen-->
         <scene sceneID="kGc-iU-oFx">
@@ -316,13 +629,24 @@
                                     <constraint firstItem="fIG-ac-31y" firstAttribute="height" secondItem="Eoq-vi-bZk" secondAttribute="height" id="vlr-bS-uwL"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeC-VT-jJT">
+                                <rect key="frame" x="10" y="10" width="22.5" height="19"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrowshape.turn.up.backward.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="f7f-pj-bmg" kind="showDetail" animates="NO" id="fcW-DP-4cw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WhX-MU-BWs"/>
                         <color key="backgroundColor" systemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="kva-hD-WBY" firstAttribute="trailing" secondItem="WhX-MU-BWs" secondAttribute="trailing" id="350-dI-LSZ"/>
+                            <constraint firstItem="YeC-VT-jJT" firstAttribute="leading" secondItem="WhX-MU-BWs" secondAttribute="leading" constant="10" id="47g-PH-TFY"/>
                             <constraint firstItem="8xU-A4-ciR" firstAttribute="trailing" secondItem="WhX-MU-BWs" secondAttribute="trailing" id="5wr-Le-UoS"/>
                             <constraint firstItem="kva-hD-WBY" firstAttribute="top" secondItem="55r-6G-A5l" secondAttribute="bottom" constant="10" id="6FE-tc-oIv"/>
+                            <constraint firstItem="YeC-VT-jJT" firstAttribute="top" secondItem="WhX-MU-BWs" secondAttribute="top" constant="10" id="7hy-Wi-OBf"/>
                             <constraint firstItem="kva-hD-WBY" firstAttribute="leading" secondItem="WhX-MU-BWs" secondAttribute="leading" id="Ozv-TX-Lda"/>
                             <constraint firstItem="8xU-A4-ciR" firstAttribute="top" secondItem="kva-hD-WBY" secondAttribute="bottom" id="aHZ-RX-IOO"/>
                             <constraint firstItem="F3H-cc-NKC" firstAttribute="centerX" secondItem="bw2-mD-Xf4" secondAttribute="centerX" id="hvw-xJ-S1V"/>
@@ -336,7 +660,9 @@
                     <navigationItem key="navigationItem" id="W9f-Td-sSg"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="background" destination="bw2-mD-Xf4" id="r1p-fv-aKn"/>
                         <outlet property="explanation_button" destination="55r-6G-A5l" id="rPM-ca-nJx"/>
+                        <outlet property="explanation_text" destination="4gg-7e-P7W" id="w15-cy-nA2"/>
                         <outlet property="explanation_view" destination="F3H-cc-NKC" id="8Wu-bg-hAX"/>
                         <outlet property="hide_explanation_button" destination="9eQ-9k-waY" id="GUf-MO-h0c"/>
                         <outlet property="tableView" destination="kva-hD-WBY" id="fry-5h-BD7"/>
@@ -571,6 +897,15 @@
                                     <constraint firstItem="O97-zn-AvO" firstAttribute="height" secondItem="IYZ-HO-TMr" secondAttribute="height" id="ogG-QX-jAJ"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yT2-9t-pkH">
+                                <rect key="frame" x="10" y="10" width="22.5" height="19"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrowshape.turn.up.backward.fill" catalog="system"/>
+                                <connections>
+                                    <segue destination="f7f-pj-bmg" kind="showDetail" animates="NO" id="54w-Jn-Drt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JmJ-ky-7iv"/>
                         <color key="backgroundColor" systemColor="darkTextColor"/>
@@ -580,18 +915,22 @@
                             <constraint firstItem="JmJ-ky-7iv" firstAttribute="trailing" secondItem="bYW-Q1-x4Q" secondAttribute="trailing" constant="10" id="FEb-fc-flE"/>
                             <constraint firstItem="AAC-Yf-h8U" firstAttribute="trailing" secondItem="JmJ-ky-7iv" secondAttribute="trailing" id="GHg-s4-gac"/>
                             <constraint firstItem="OmF-x5-80T" firstAttribute="centerY" secondItem="Yf2-VC-nNd" secondAttribute="centerY" id="GpW-As-9gU"/>
+                            <constraint firstItem="yT2-9t-pkH" firstAttribute="top" secondItem="JmJ-ky-7iv" secondAttribute="top" constant="10" id="U7T-xh-f1o"/>
                             <constraint firstItem="AAC-Yf-h8U" firstAttribute="top" secondItem="bYW-Q1-x4Q" secondAttribute="bottom" constant="10" id="X23-MG-hIW"/>
                             <constraint firstItem="OmF-x5-80T" firstAttribute="centerX" secondItem="Yf2-VC-nNd" secondAttribute="centerX" id="hqf-jT-1ky"/>
                             <constraint firstItem="bYW-Q1-x4Q" firstAttribute="top" secondItem="JmJ-ky-7iv" secondAttribute="top" constant="10" id="ig2-NT-a7t"/>
                             <constraint firstItem="3gK-m7-y6a" firstAttribute="leading" secondItem="JmJ-ky-7iv" secondAttribute="leading" id="jwc-jE-WMg"/>
                             <constraint firstItem="3gK-m7-y6a" firstAttribute="trailing" secondItem="JmJ-ky-7iv" secondAttribute="trailing" id="oZT-Jn-s4V"/>
                             <constraint firstItem="AAC-Yf-h8U" firstAttribute="leading" secondItem="JmJ-ky-7iv" secondAttribute="leading" id="oxI-kJ-oGQ"/>
+                            <constraint firstItem="yT2-9t-pkH" firstAttribute="leading" secondItem="JmJ-ky-7iv" secondAttribute="leading" constant="10" id="pUF-yG-BHm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hTM-qO-mTj"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="background" destination="Yf2-VC-nNd" id="JYV-zI-nqz"/>
                         <outlet property="explanation_button" destination="bYW-Q1-x4Q" id="EFG-Iz-1WP"/>
+                        <outlet property="explanation_text" destination="Lic-W6-AmW" id="tIO-61-h8Z"/>
                         <outlet property="explanation_view" destination="OmF-x5-80T" id="mLf-Em-9Bn"/>
                         <outlet property="hide_explanation_button" destination="WF1-B9-Rly" id="afC-wb-nI8"/>
                         <outlet property="tableView" destination="AAC-Yf-h8U" id="dfq-JG-Vnl"/>
@@ -604,9 +943,11 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="toh-3E-3T5"/>
-        <segue reference="Bgl-uW-niC"/>
+        <segue reference="UGX-ch-afj"/>
+        <segue reference="EGs-Ug-mjE"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="questionmark.square" catalog="system" width="128" height="114"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
