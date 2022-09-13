@@ -44,8 +44,6 @@ class QuestionsViewController: UIViewController {
         next_button.tintColor = UIColor.white
         updateVals()
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     @IBAction func button1_clicked(_ sender: Any) {
         if(current_values[5] == "1"){
@@ -140,15 +138,5 @@ class QuestionsViewController: UIViewController {
             button4.setTitle(current_values[4], for: .normal)
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = initialViewController
             self.window?.makeKeyAndVisible()
         } else{
-            guard let initialViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController
+            guard let initialViewController = storyboard.instantiateViewController(withIdentifier: "OpeningViewController") as? OpeningViewController
             else {
                 fatalError("Unable to instantiate an ViewController from the storyboard")
             }
