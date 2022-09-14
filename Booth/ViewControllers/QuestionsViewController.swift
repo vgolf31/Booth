@@ -51,8 +51,7 @@ class QuestionsViewController: UIViewController {
             current_question += 1
         } else{
             button1.tintColor = UIColor.systemRed
-            next_button.setTitle("Start Over", for: .normal)
-            current_question = 0
+            next_button.setTitle("Try Again", for: .normal)
         }
         button1.isUserInteractionEnabled = false
         button2.isUserInteractionEnabled = false
@@ -67,8 +66,7 @@ class QuestionsViewController: UIViewController {
             current_question += 1
         } else{
             button2.tintColor = UIColor.systemRed
-            next_button.setTitle("Start Over", for: .normal)
-            current_question = 0
+            next_button.setTitle("Try Again", for: .normal)
         }
         button1.isUserInteractionEnabled = false
         button2.isUserInteractionEnabled = false
@@ -83,8 +81,7 @@ class QuestionsViewController: UIViewController {
             current_question += 1
         } else{
             button3.tintColor = UIColor.systemRed
-            next_button.setTitle("Start Over", for: .normal)
-            current_question = 0
+            next_button.setTitle("Try Again", for: .normal)
         }
         button1.isUserInteractionEnabled = false
         button2.isUserInteractionEnabled = false
@@ -99,8 +96,7 @@ class QuestionsViewController: UIViewController {
             current_question += 1
         } else{
             button4.tintColor = UIColor.systemRed
-            next_button.setTitle("Start Over", for: .normal)
-            current_question = 0
+            next_button.setTitle("Try Again", for: .normal)
         }
         button1.isUserInteractionEnabled = false
         button2.isUserInteractionEnabled = false

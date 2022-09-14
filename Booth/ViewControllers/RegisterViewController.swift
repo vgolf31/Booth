@@ -24,6 +24,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var password2_label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        username_field.delegate = self
+        first_password_field.delegate = self
+        second_password_field.delegate = self
         if(defaults.bool(forKey: "signedIn") == true){
             if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GalleryViewController") as? GalleryViewController
             {
@@ -81,7 +84,10 @@ class RegisterViewController: UIViewController {
             }
         }
     }
-    
-
-
+}
+extension RegisterViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
 }

@@ -21,6 +21,8 @@ class SignInViewController: UIViewController {
     let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
+        username_field.delegate = self
+        password_field.delegate = self
         if(defaults.string(forKey: "DisplayMode") == "Light") {
             background.backgroundColor = UIColor.white
             username_label.textColor = UIColor.black
@@ -71,4 +73,10 @@ class SignInViewController: UIViewController {
         }
     }
 
+}
+extension SignInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
 }
