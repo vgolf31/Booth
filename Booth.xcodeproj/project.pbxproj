@@ -15,6 +15,8 @@
 		0D1D317F243BC31100F6BE30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1D317D243BC31100F6BE30 /* LaunchScreen.storyboard */; };
 		0D484605288705AD00018612 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D484604288705AD00018612 /* QuestionsViewController.swift */; };
 		0D4EC593279F1B2C005DA853 /* stockstruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4EC592279F1B2C005DA853 /* stockstruct.swift */; };
+		0D5EE2EC28D64F1B009CCCF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EE2EB28D64F1B009CCCF3 /* SceneDelegate.swift */; };
+		0D5EE2EE28D64FC1009CCCF3 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5EE2ED28D64FC1009CCCF3 /* LoadingViewController.swift */; };
 		0D674816279E052300F169A6 /* ReturnOnCapitalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D674815279E052300F169A6 /* ReturnOnCapitalViewController.swift */; };
 		0D674818279E17EB00F169A6 /* EarningsYieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D674817279E17EB00F169A6 /* EarningsYieldViewController.swift */; };
 		0D6953AC27A748020012AEE9 /* TwoLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6953AA27A748020012AEE9 /* TwoLabelCell.swift */; };
@@ -44,6 +46,8 @@
 		0D1D3180243BC31100F6BE30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D484604288705AD00018612 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		0D4EC592279F1B2C005DA853 /* stockstruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stockstruct.swift; sourceTree = "<group>"; };
+		0D5EE2EB28D64F1B009CCCF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0D5EE2ED28D64FC1009CCCF3 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		0D674815279E052300F169A6 /* ReturnOnCapitalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnOnCapitalViewController.swift; sourceTree = "<group>"; };
 		0D674817279E17EB00F169A6 /* EarningsYieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarningsYieldViewController.swift; sourceTree = "<group>"; };
 		0D6953AA27A748020012AEE9 /* TwoLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLabelCell.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				0D18D1D727C7F0C700CCF5C5 /* Booth.entitlements */,
 				0DBB666524FC0DC90050B960 /* SwiftRedis */,
 				0D1D3172243BC30800F6BE30 /* AppDelegate.swift */,
+				0D5EE2EB28D64F1B009CCCF3 /* SceneDelegate.swift */,
 				0D75C4CB2442868C00A03844 /* Constants.swift */,
 				0D7AA5B8243D36DF0059477D /* ViewControllers */,
 				0D1D3178243BC30800F6BE30 /* Main.storyboard */,
@@ -141,6 +146,7 @@
 				0DFF473528C4DCFD007256F6 /* SignInViewController.swift */,
 				0DFF473728C4DD0C007256F6 /* RegisterViewController.swift */,
 				0DFF473928CD5529007256F6 /* AddNotificationViewController.swift */,
+				0D5EE2ED28D64FC1009CCCF3 /* LoadingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -291,8 +297,10 @@
 				0D674818279E17EB00F169A6 /* EarningsYieldViewController.swift in Sources */,
 				0D13ECEA286DF12B00F7E9B8 /* EarningsInfoViewController.swift in Sources */,
 				0D1D3173243BC30800F6BE30 /* AppDelegate.swift in Sources */,
+				0D5EE2EE28D64FC1009CCCF3 /* LoadingViewController.swift in Sources */,
 				0DFF473A28CD5529007256F6 /* AddNotificationViewController.swift in Sources */,
 				0DD2341C28BC28C20044B932 /* MenuViewController.swift in Sources */,
+				0D5EE2EC28D64F1B009CCCF3 /* SceneDelegate.swift in Sources */,
 				0DFF473828C4DD0C007256F6 /* RegisterViewController.swift in Sources */,
 				0DFF473428C4DBF4007256F6 /* GalleryViewController.swift in Sources */,
 				0D75C4CC2442868C00A03844 /* Constants.swift in Sources */,
@@ -460,7 +468,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.VeerteghMinhas.Booth;
 				PRODUCT_NAME = Booth;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -489,7 +497,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.VeerteghMinhas.Booth;
 				PRODUCT_NAME = Booth;
 				PROVISIONING_PROFILE_SPECIFIER = "";

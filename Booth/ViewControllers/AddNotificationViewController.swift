@@ -18,6 +18,8 @@ class AddNotificationViewController: UIViewController {
     let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
+        title_field.delegate = self
+        body_field.delegate = self
         if(defaults.string(forKey: "DisplayMode") == "Light") {
             background.backgroundColor = UIColor.gray
             title_label.textColor = UIColor.black
@@ -64,7 +66,10 @@ class AddNotificationViewController: UIViewController {
             }
         }
     }
-    
-
-
+}
+extension AddNotificationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder() // dismiss keyboard
+        return true
+    }
 }
